@@ -4,7 +4,7 @@
 #include <string.h>
 #include "inout.h"
 #include <unistd.h>
-//! Descrição do arquivo.
+
 /*!
 * \author Lucas Henrique de Alencar Rodrigues.
 * \since 08/12/20
@@ -42,7 +42,7 @@ int main(int argc, char const *argv[]){
     }
 
     /*!
-    * \brief adiciona os nomes dos arquivos de saida
+    * \brief Add the default name of the output files
     */
     int printa = 0;
     char nome1[20],nome2[30],nome3[30];
@@ -68,7 +68,7 @@ int main(int argc, char const *argv[]){
 
 
     /*!
-    * \brief checa se o usuário deseja que o argumento -s seja válido
+    * \brief checks whether the -s argument is valid
     */
     for(int i=0;i<argc;i++){
         if(strcmp(argv[i],"-s") == 0)
@@ -77,12 +77,12 @@ int main(int argc, char const *argv[]){
 
 
 
-    dados_ini dados; /**< estrutura que armazena os dados iniciais e os primeiros cálculos*/
-    separa(titulo);/**< Separa os nomes dos itens escritos no documento dos dados*/
+    dados_ini dados; /**< struct that stores the initial data and the first calculations*/
+    separa(titulo);/**< Separates the names of the items written in the document from the data*/
 
 
     /*!
-    \return uma struct dados_ini ou finaliza o programa.
+    \return the struct 'dados_ini' or terminates the program
     */
     printf("\nDados lidos com sucesso!");
     dados = ler_arq_ini();
