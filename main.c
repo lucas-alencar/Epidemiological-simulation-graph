@@ -90,9 +90,9 @@ int main(int argc, char const *argv[]){
 
 
     
-    int quant_dados = dados.dias*24/dados.h; /**< Define a quantidade de dados que serão alocados dinamicamente pelas variaveis s,i,r*/
+    int quant_dados = dados.dias*24/dados.h; /**< Defines the size of the data that will be dynamically allocated by the variables s,i,r*/
 
-    float *s,*i,*r,*morte; /**< Variáveis que armazenam o valor de cada função apresentada no gráfico*/
+    float *s,*i,*r,*morte; /**< Main variables */
     s = (float *) calloc(quant_dados,sizeof(float));
     i = (float *) calloc(quant_dados,sizeof(float));
     r = (float *) calloc(quant_dados,sizeof(float));
@@ -102,15 +102,10 @@ int main(int argc, char const *argv[]){
     i[0] = dados.i_0;
     r[0] = dados.r_0;
     morte[0] = dados.r_0*2/100;
-    /*!
-    * \brief definição dos valores iniciais de s,i,r
-    *
-    */
-
 
    char titulo_grafico[30];
     if(teste1 == 1){
-        preenche_cenario_base(dados, quant_dados, s, i, r,morte,printa); //!< Preenche as strings com os valores calculados (sem escrever no arquivo)
+        preenche_cenario_base(dados, quant_dados, s, i, r,morte,printa); //!< Fill the strings with the calculated values (without writing to the file)
         printf("\ncalculando resultados e escrevendo");
         escreve_sir(dados,quant_dados,s,i,r,morte,nome1); //!< Escreve no arquivo, utilizando-se das variáveis s,i,r e calcula novamente o tempo
         printf("\nEscrevendo documento");
